@@ -1,11 +1,11 @@
-/* message mention highlight */
+/* message mention highlight - consistent pink */
 .mentioned__5126c {
   background: rgba(255, 158, 203, 0.18) !important;
   border-left: 3px solid #ff9ecb !important;
 }
 
 .mentioned__5126c:hover {
-  background: rgba(255, 182, 217, 0.25) !important;
+  background: rgba(255, 158, 203, 0.25) !important;
 }
 
 /* @mentions */
