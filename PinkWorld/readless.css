@@ -1,48 +1,392 @@
-/**
- * @name Fallout 4 Terminal
- * @author Bates
- * @version 4.0.0
- * @source https://github.com/B4T3S/Fallout4TerminalTheme
- * @website https://B4T3S.github.io/Fallout4TerminalTheme
- * @donate https://www.paypal.com/paypalme/floriancegledi
- * @patreon https://patreon.com/bates
- * @description A theme inspired by Fallout 4's terminals!
- * @authorId 137259132305539072
- * @invite 6qd3SkP6Ch
-*/
+@import url("https://raw.githubusercontent.com/reaper-oc/Vencord-ClearVision-Addon/main/main.css");
+@import url("https://raw.githubusercontent.com/reaper-oc/Vencord-ClearVision-Addon/22943c989524a33d240fb7fe24a518fdc36f1e3a/betterdiscord.css");
 
-@import url('https://B4T3S.github.io/Fallout4TerminalTheme/mainRewrite.css');
-/* ^ This is the main Import ^ DO NOT TOUCH. Without this, the theme won't load!!! */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
 
-@import url('https://B4T3S.github.io/Fallout4TerminalTheme/css/crtEffect.css');
-/* ^ This is the CRT effect. ^ If you don't like it, remove or comment out this line! */
+:root {
+  --main-font: "Quicksand", "gg sans", sans-serif;
+  --code-font: "JetBrains Mono", monospace;
+  --pink-glow: #ff9ecb;
+  --pink-soft: #ffb6d9;
+  --pink-dim: #c45a7a;
+  --pink-dark: #6b3a4a;
+  --pink-white: #ffeef3;
+  --bg-base: #0d0a0c;
+  --bg-secondary: #141114;
+  --bg-tertiary: #1c171a;
+  --bg-hover: #2a1f24;
+  --bg-input: #0f0c0e;
+  --text-normal: #f0e6ea;
+  --text-muted: #b89aa8;
+  --text-link: #ff9ecb;
+  --border-color: rgba(255, 158, 203, 0.15);
+  --accent: var(--pink-glow);
+  --accent-dim: rgba(255, 158, 203, 0.2);
+  --mention-bg: rgba(255, 158, 203, 0.08);
+  --mention-border: rgba(255, 158, 203, 0.2);
+  --online-color: #b6f7c7;
+  --idle-color: #ffe0a3;
+  --dnd-color: #ffb3ba;
+  --streaming-color: #d9b8ff;
+  --offline-color: #6a5a62;
+}
 
-/* CUSTOMIZE COLORS IN HERE! */
-:root,
-.visual-refresh,
-.visual-refresh.theme-dark {
-  --rgb-highlight: 74, 239, 152; /* The main highlight color */
-  --rgb-background: 0, 9, 0; /* The main background color */
-  --rgb-text: 74, 239, 152; /* The color (almost) all text should use */
-  --rgb-close-button: 212, 18, 39; /* The main "close this" or "deny" color */
-  --rgb-online-color: 57, 255, 20; /* The color used in the "online" user status symbol */
-  --rgb-afk-color: 255, 255, 51; /* The color used in the "idle" user status symbol */
-  --rgb-dnd-color: 255, 0, 0; /* The color used in the "do not disturb" user status symbol */
-  --rgb-streaming-color: 188, 19, 254; /* The color used in the "streaming X" user status symbol */
+.theme-light,
+.theme-dark {
+  --background-primary: var(--bg-base) !important;
+  --background-secondary: var(--bg-secondary) !important;
+  --background-secondary-alt: var(--bg-tertiary) !important;
+  --background-tertiary: var(--bg-tertiary) !important;
+  --background-floating: var(--bg-secondary) !important;
+  --background-modifier-hover: rgba(255, 158, 203, 0.08) !important;
+  --background-modifier-active: rgba(255, 158, 203, 0.12) !important;
+  --background-modifier-selected: rgba(255, 158, 203, 0.15) !important;
+  --channeltextarea-background: var(--bg-input) !important;
+  --text-normal: var(--text-normal) !important;
+  --text-muted: var(--text-muted) !important;
+  --text-link: var(--text-link) !important;
+  --interactive-normal: var(--text-muted) !important;
+  --interactive-hover: var(--pink-soft) !important;
+  --interactive-active: var(--pink-glow) !important;
+  --brand-experiment: var(--pink-glow) !important;
+  --brand-experiment-560: var(--pink-dim) !important;
+  --scrollbar-thumb: rgba(255, 158, 203, 0.2) !important;
+}
 
-  --transition-time: .3s; /* How fast animations added by the theme happen. Default is 0.3 seconds */
+body,
+.appMount_fae9dd,
+.app__160d8,
+.applicationStore_f0a2b6,
+.layers__87d6b,
+.layer__87d6b,
+.container_e6c20e,
+.standardSidebarView__112f5,
+.contentRegion__112f5,
+.contentColumn__112f5,
+.userSettingsSecurity__01274,
+.userSettingsAccount__01274 {
+  background: var(--bg-base) !important;
+}
 
-  --background-image: unset; /* To add an image, replace unset with url(https://www.YOUR-URL-HERE.com) */
-  --background-position: center; /* Positions the background image */
-  --background-size: cover; /* Scales the background image */
-  --background-blur: 5px; /* Blurs the image which usually helps with readability of text infront of it */
-  --background-brightness: 100%; /* Changes the background images brightness */
- 
-  --show-original-title: 0; /* Whether you want to show discords original title (0 means no, 1 means yes) */
-  --show-custom-title: 1; /* Whether you want to show a custom title (0 means no, 1 means yes) */
-  --custom-title-text: "ROBCO Industries (tm)"; /* The custom text you want to display */
-  --custom-title-font-size: 16px; /* The size in pixels of the custom title text */
-  --custom-title-font-weight: bold; /* The font "weight" of the custom title text. For reference: https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight */
-  --custom-title-margin-top: 0px; /* The distance from the top of the window to the custom title text */
-  --custom-title-margin-left: 0px; /* The distance from the left side of the window to the custom title text */
+.sidebar_c48ade,
+.container__2637a,
+.guildsWrapper__5d473,
+.membersWrap_cbd271,
+.panels_c48ade,
+.privateChannels__374d5,
+.channel_cda6dd,
+.guilds_c48ade {
+  background: var(--bg-secondary) !important;
+  border-right: 1px solid var(--border-color);
+}
+
+.chatContent_f75fb0,
+.chat__374d5,
+.messagesWrapper__5c47b {
+  background: var(--bg-base) !important;
+}
+
+.title_f75fb0,
+.container__37e49,
+.children__37e49,
+.toolbar__37e49 {
+  background: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.messageContent__21e69,
+.contents__21e69 {
+  color: var(--text-normal) !important;
+}
+
+.message__5126c:hover {
+  background: rgba(255, 158, 203, 0.03) !important;
+}
+
+.username_dd21ab,
+.username__55827 {
+  color: var(--pink-soft) !important;
+}
+
+.timestamp__4bf4f,
+.timestamp_dd21ab {
+  color: var(--text-muted) !important;
+}
+
+.mentioned__5126c {
+  background: var(--mention-bg) !important;
+  border-left: 3px solid var(--pink-glow) !important;
+}
+
+.mentioned__5126c:hover {
+  background: rgba(255, 158, 203, 0.12) !important;
+}
+
+.wrapper_f61d60,
+.mention_dfa8b6 {
+  background: rgba(255, 158, 203, 0.12) !important;
+  color: var(--pink-glow) !important;
+  border-radius: 12px !important;
+}
+
+.wrapper_f61d60:hover,
+.mention_dfa8b6:hover {
+  background: rgba(255, 158, 203, 0.22) !important;
+  color: var(--text-normal) !important;
+}
+
+.numberBadge__2b1f5 {
+  background: var(--pink-glow) !important;
+  color: var(--bg-base) !important;
+}
+
+img[class*="avatar"],
+svg[mask*="avatar"] {
+  border-radius: 35% !important;
+  border: 2px solid rgba(255, 158, 203, 0.25) !important;
+  transition: all 0.2s ease !important;
+}
+
+img[class*="avatar"]:hover {
+  border-radius: 50% !important;
+  border-color: var(--pink-glow) !important;
+}
+
+.role_dfa8b6,
+.role__9f0a2 {
+  background: rgba(255, 158, 203, 0.08) !important;
+  border: 1px solid rgba(255, 158, 203, 0.15) !important;
+  border-radius: 999px !important;
+}
+
+.lookFilled__201d5.colorBrand__201d5,
+.button_b2ca13 {
+  background: var(--pink-dim) !important;
+  color: var(--bg-base) !important;
+  border-radius: 12px !important;
+}
+
+.lookFilled__201d5.colorBrand__201d5:hover,
+.button_b2ca13:hover {
+  background: var(--pink-glow) !important;
+  color: var(--bg-secondary) !important;
+}
+
+.lookOutlined__201d5 {
+  border-color: var(--pink-glow) !important;
+  color: var(--pink-glow) !important;
+}
+
+.lookOutlined__201d5:hover {
+  background: rgba(255, 158, 203, 0.1) !important;
+}
+
+.channelTextArea_f75fb0,
+.form_f75fb0,
+.textArea__2043b {
+  background: var(--bg-input) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 16px !important;
+}
+
+.textArea__2043b {
+  color: var(--text-normal) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 158, 203, 0.2) !important;
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 158, 203, 0.35) !important;
+}
+
+::selection {
+  background: rgba(255, 158, 203, 0.25) !important;
+  color: var(--text-normal) !important;
+}
+
+button[aria-label="Send a gift"],
+button[aria-label="Apps"],
+[aria-label="Open Gift Picker"] {
+  display: none !important;
+}
+
+[class*="wordmark"]:hover::after {
+  content: " 🐾";
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.container__3baa1::before {
+  content: "🌸 PinkWorld — for femboys & friends 🌸";
+  display: block;
+  text-align: center;
+  padding: 8px;
+  font-size: 10px;
+  color: var(--pink-soft);
+  opacity: 0.6;
+  letter-spacing: 2px;
+}
+
+.userInfo__26147 {
+  position: relative;
+}
+
+.userInfo__26147 .button__26147:first-of-type {
+  position: relative;
+}
+
+.userInfo__26147 .button__26147:first-of-type::after {
+  content: "🌸 DM CREATOR 🌸";
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--pink-dim), var(--pink-dark));
+  color: var(--pink-white);
+  padding: 6px 14px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  border: 1px solid var(--pink-glow);
+  pointer-events: auto;
+  font-family: var(--main-font);
+  letter-spacing: 0.5px;
+}
+
+.userInfo__26147 .button__26147:first-of-type::after:hover {
+  background: linear-gradient(135deg, var(--pink-glow), var(--pink-soft));
+  color: var(--bg-base);
+  transform: translateY(-50%) scale(1.02);
+  border-color: var(--pink-white);
+}
+
+.userInfo__26147 .button__26147:first-of-type::after:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+@keyframes gentleGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 158, 203, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 158, 203, 0.6);
+  }
+}
+
+[class*="avatar"]:hover {
+  animation: gentleGlow 0.5s ease;
+}
+
+.progressBar__37796,
+.progressBar_c51c2f {
+  background: linear-gradient(90deg, var(--pink-dim), var(--pink-glow)) !important;
+}
+
+.message__5126c[class*="replied"] {
+  border-left-color: var(--pink-glow) !important;
+}
+
+.panels_c48ade {
+  border-top: 1px solid var(--border-color);
+}
+
+.tabBar__739f0 .tab_bc1745.selected_bc1745 {
+  border-bottom-color: var(--pink-glow) !important;
+  color: var(--pink-glow) !important;
+}
+
+.tabBar__739f0 .tab_bc1745:hover {
+  color: var(--pink-soft) !important;
+}
+
+.input__372db:focus,
+.input__372db:hover {
+  border-color: var(--pink-glow) !important;
+}
+
+.checkbox__66f13.checked__66f13 {
+  background-color: var(--pink-glow) !important;
+}
+
+.radioGroup__57e3b .radioItem__57e3b.checked__57e3b {
+  border-color: var(--pink-glow) !important;
+}
+
+.privateChannels__374d5 .channel_cda6dd.selected__5d473 {
+  background: var(--bg-hover) !important;
+  border-left: 3px solid var(--pink-glow) !important;
+}
+
+.friendsTable__9d2b9 .friendsRow__9d2b9:hover {
+  background: var(--bg-hover) !important;
+}
+
+.container__06509 .header__06509 {
+  background: var(--bg-secondary) !important;
+}
+
+.container__06509 .input__06509 {
+  background: var(--bg-input) !important;
+}
+
+/* ===== CATEGORY TEXT (WORKING FIX) ===== */
+[class*="containerDefault"] [class*="name"],
+[class*="containerDefault"] [class*="overflow"],
+[class*="containerDefault"] span {
+  color: var(--pink-soft) !important;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Category caret icon */
+[class*="containerDefault"] svg {
+  color: var(--pink-glow) !important;
+}
+
+/* ===== COMMENTED OUT — WAS CAUSING ISSUES ===== */
+/* .link__2ea32 span,
+.channelName__2ea32,
+.icon__2ea32 {
+  color: #b89aa8 !important;
+} */
+
+/* ============================================
+   FIX: TOP CHANNELS HEADER BLUE LINE
+============================================ */
+
+/* Kill Discord/ClearVision brand gradient */
+:root {
+  --brand-500: #ff9ecb !important;
+  --brand-560: #ff9ecb !important;
+  --brand-experiment: #ff9ecb !important;
+  --brand-experiment-560: #c45a7a !important;
+  --accent-primary: #ff9ecb !important;
+}
+
+/* Force header background (removes blue glow bar) */
+[class*="sidebar"] [class*="header"],
+[class*="container"] [class*="header"] {
+  background: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Remove any gradient line/pseudo element */
+[class*="sidebar"] [class*="header"]::before,
+[class*="sidebar"] [class*="header"]::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Extra safety: kill any brand-colored strip */
+[class*="sidebar"] header {
+  box-shadow: none !important;
 }
