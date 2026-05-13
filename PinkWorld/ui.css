@@ -1,0 +1,30 @@
+/* panels glass effect */
+.visual-refresh .panels_c48ade,
+.visual-refresh .container__2637a,
+.visual-refresh .membersWrap_cbd271 {
+  background: rgba(255, 227, 238, 0.65) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 158, 203, 0.25);
+}
+
+/* chat input */
+.channelTextArea_f75fb0 {
+  background: rgba(255, 227, 238, 0.7) !important;
+  border: 1px solid rgba(255, 158, 203, 0.25);
+}
+
+/* selected channel */
+.modeSelected__2ea32 .link__2ea32 {
+  background: rgba(255, 158, 203, 0.22) !important;
+  border-left: 3px solid var(--main-color);
+}
+
+/* buttons */
+.lookFilled__201d5.colorBrand__201d5 {
+  background: var(--main-color) !important;
+  color: #3a2a30 !important;
+}
+
+.lookFilled__201d5.colorBrand__201d5:hover {
+  background: var(--hover-color) !important;
+}
