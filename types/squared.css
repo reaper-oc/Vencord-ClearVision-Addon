@@ -1,0 +1,438 @@
+@import url("https://raw.githubusercontent.com/reaper-oc/Vencord-ClearVision-Addon/main/main.css");
+@import url("https://raw.githubusercontent.com/reaper-oc/Vencord-ClearVision-Addon/22943c989524a33d240fb7fe24a518fdc36f1e3a/betterdiscord.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-font: "Quicksand", "gg sans", sans-serif;
+  --code-font: "JetBrains Mono", monospace;
+  --pink-glow: #ff9ecb;
+  --pink-soft: #ffb6d9;
+  --pink-dim: #c45a7a;
+  --pink-dark: #6b3a4a;
+  --pink-white: #ffeef3;
+  --bg-base: #0d0a0c;
+  --bg-secondary: #141114;
+  --bg-tertiary: #1c171a;
+  --bg-hover: #2a1f24;
+  --bg-input: #0f0c0e;
+  --text-normal: #f0e6ea;
+  --text-muted: #b89aa8;
+  --text-link: #ff9ecb;
+  --border-color: rgba(255, 158, 203, 0.15);
+  --accent: var(--pink-glow);
+  --accent-dim: rgba(255, 158, 203, 0.2);
+  --mention-bg: rgba(255, 158, 203, 0.08);
+  --mention-border: rgba(255, 158, 203, 0.2);
+  --online-color: #b6f7c7;
+  --idle-color: #ffe0a3;
+  --dnd-color: #ffb3ba;
+  --streaming-color: #d9b8ff;
+  --offline-color: #6a5a62;
+
+  /* kill ClearVision/Discord blue everywhere */
+  --header-primary: #ff9ecb !important;
+  --header-secondary: #b89aa8 !important;
+  --channels-default: #b89aa8 !important;
+
+  /* force brand tokens */
+  --brand-experiment: #ff9ecb !important;
+  --brand-experiment-560: #c45a7a !important;
+}
+
+.theme-light,
+.theme-dark {
+  --background-primary: var(--bg-base) !important;
+  --background-secondary: var(--bg-secondary) !important;
+  --background-secondary-alt: var(--bg-tertiary) !important;
+  --background-tertiary: var(--bg-tertiary) !important;
+  --background-floating: var(--bg-secondary) !important;
+  --background-modifier-hover: rgba(255, 158, 203, 0.08) !important;
+  --background-modifier-active: rgba(255, 158, 203, 0.12) !important;
+  --background-modifier-selected: rgba(255, 158, 203, 0.15) !important;
+  --channeltextarea-background: var(--bg-input) !important;
+  --text-normal: var(--text-normal) !important;
+  --text-muted: var(--text-muted) !important;
+  --text-link: var(--text-link) !important;
+  --interactive-normal: var(--text-muted) !important;
+  --interactive-hover: var(--pink-soft) !important;
+  --interactive-active: var(--pink-glow) !important;
+  --brand-experiment: var(--pink-glow) !important;
+  --brand-experiment-560: var(--pink-dim) !important;
+  --scrollbar-thumb: rgba(255, 158, 203, 0.2) !important;
+}
+
+body,
+.appMount_fae9dd,
+.app__160d8,
+.applicationStore_f0a2b6,
+.layers__87d6b,
+.layer__87d6b,
+.container_e6c20e,
+.standardSidebarView__112f5,
+.contentRegion__112f5,
+.contentColumn__112f5,
+.userSettingsSecurity__01274,
+.userSettingsAccount__01274 {
+  background: var(--bg-base) !important;
+}
+
+.sidebar_c48ade,
+.container__2637a,
+.guildsWrapper__5d473,
+.membersWrap_cbd271,
+.panels_c48ade,
+.privateChannels__374d5,
+.channel_cda6dd,
+.guilds_c48ade {
+  background: var(--bg-secondary) !important;
+  border-right: 1px solid var(--border-color);
+}
+
+.chatContent_f75fb0,
+.chat__374d5,
+.messagesWrapper__5c47b {
+  background: var(--bg-base) !important;
+}
+
+.title_f75fb0,
+.container__37e49,
+.children__37e49,
+.toolbar__37e49 {
+  background: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.messageContent__21e69,
+.contents__21e69 {
+  color: var(--text-normal) !important;
+}
+
+.message__5126c:hover {
+  background: rgba(255, 158, 203, 0.03) !important;
+}
+
+.username_dd21ab,
+.username__55827 {
+  color: var(--pink-soft) !important;
+}
+
+.timestamp__4bf4f,
+.timestamp_dd21ab {
+  color: var(--text-muted) !important;
+}
+
+.mentioned__5126c {
+  background: var(--mention-bg) !important;
+  border-left: 3px solid var(--pink-glow) !important;
+}
+
+.mentioned__5126c:hover {
+  background: rgba(255, 158, 203, 0.12) !important;
+}
+
+.wrapper_f61d60,
+.mention_dfa8b6 {
+  background: rgba(255, 158, 203, 0.12) !important;
+  color: var(--pink-glow) !important;
+  border-radius: 12px !important;
+}
+
+.wrapper_f61d60:hover,
+.mention_dfa8b6:hover {
+  background: rgba(255, 158, 203, 0.22) !important;
+  color: var(--text-normal) !important;
+}
+
+.numberBadge__2b1f5 {
+  background: var(--pink-glow) !important;
+  color: var(--bg-base) !important;
+}
+
+/* ============================================
+   PFPS AS LITERAL SQUARES (NO ROUNDING)
+============================================ */
+
+/* Force EVERY avatar to be a perfect square */
+img[class*="avatar"],
+svg[mask*="avatar"],
+[class*="avatar"] img,
+[class*="avatar"] svg,
+[class*="avatar"] > img,
+[class*="avatar"] circle,
+foreignObject[mask*="url"],
+.avatar__08316,
+.avatar__37e49,
+.avatar__5d473,
+.avatar_c48ade,
+.avatar__55827,
+.avatar__6e2d9,
+.avatar__15f83,
+.avatar__49c6b,
+.avatar__3d843,
+.avatar__2c8f4,
+.avatar__4e3b9,
+.avatar__1a5c2,
+.avatar__7a3e1,
+[class*="avatar"] > div,
+[class*="avatar"] > svg {
+  border-radius: 0px !important;
+  border-radius: 0% !important;
+  border-radius: 0 !important;
+  border: 2px solid rgba(255, 158, 203, 0.3) !important;
+}
+
+/* Also catch the mask-based avatars (Discord's new system) */
+[class*="avatar"] mask,
+[class*="avatar"] foreignObject {
+  border-radius: 0px !important;
+}
+
+/* Server icons (guild icons) as squares too */
+[class*="guildIcon"],
+[class*="guild"] img,
+[class*="icon"] img {
+  border-radius: 0px !important;
+}
+
+/* Mini avatars in member list */
+[class*="member"] [class*="avatar"] {
+  border-radius: 0px !important;
+}
+
+/* Hover effect — no rounding either */
+img[class*="avatar"]:hover,
+[class*="avatar"]:hover img {
+  border-radius: 0px !important;
+  transform: scale(1.02);
+  transition: transform 0.1s ease;
+}
+
+/* Remove the hover animation that made them round */
+@keyframes gentleGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 158, 203, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 158, 203, 0.6);
+  }
+}
+
+[class*="avatar"]:hover {
+  animation: gentleGlow 0.5s ease;
+}
+
+/* Role pills */
+.role_dfa8b6,
+.role__9f0a2 {
+  background: rgba(255, 158, 203, 0.08) !important;
+  border: 1px solid rgba(255, 158, 203, 0.15) !important;
+  border-radius: 999px !important;
+}
+
+.lookFilled__201d5.colorBrand__201d5,
+.button_b2ca13 {
+  background: var(--pink-dim) !important;
+  color: var(--bg-base) !important;
+  border-radius: 12px !important;
+}
+
+.lookFilled__201d5.colorBrand__201d5:hover,
+.button_b2ca13:hover {
+  background: var(--pink-glow) !important;
+  color: var(--bg-secondary) !important;
+}
+
+.lookOutlined__201d5 {
+  border-color: var(--pink-glow) !important;
+  color: var(--pink-glow) !important;
+}
+
+.lookOutlined__201d5:hover {
+  background: rgba(255, 158, 203, 0.1) !important;
+}
+
+.channelTextArea_f75fb0,
+.form_f75fb0,
+.textArea__2043b {
+  background: var(--bg-input) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 16px !important;
+}
+
+.textArea__2043b {
+  color: var(--text-normal) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 158, 203, 0.2) !important;
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 158, 203, 0.35) !important;
+}
+
+::selection {
+  background: rgba(255, 158, 203, 0.25) !important;
+  color: var(--text-normal) !important;
+}
+
+button[aria-label="Send a gift"],
+button[aria-label="Apps"],
+[aria-label="Open Gift Picker"] {
+  display: none !important;
+}
+
+[class*="wordmark"]:hover::after {
+  content: " 🐾";
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.container__3baa1::before {
+  content: "🌸 PinkWorld — for femboys & friends 🌸";
+  display: block;
+  text-align: center;
+  padding: 8px;
+  font-size: 10px;
+  color: var(--pink-soft);
+  opacity: 0.6;
+  letter-spacing: 2px;
+}
+
+.userInfo__26147 {
+  position: relative;
+}
+
+.userInfo__26147 .button__26147:first-of-type {
+  position: relative;
+}
+
+.userInfo__26147 .button__26147:first-of-type::after {
+  content: "🌸 DM CREATOR 🌸";
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--pink-dim), var(--pink-dark));
+  color: var(--pink-white);
+  padding: 6px 14px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  border: 1px solid var(--pink-glow);
+  pointer-events: auto;
+  font-family: var(--main-font);
+  letter-spacing: 0.5px;
+}
+
+.userInfo__26147 .button__26147:first-of-type::after:hover {
+  background: linear-gradient(135deg, var(--pink-glow), var(--pink-soft));
+  color: var(--bg-base);
+  transform: translateY(-50%) scale(1.02);
+  border-color: var(--pink-white);
+}
+
+.userInfo__26147 .button__26147:first-of-type::after:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+.progressBar__37796,
+.progressBar_c51c2f {
+  background: linear-gradient(90deg, var(--pink-dim), var(--pink-glow)) !important;
+}
+
+.message__5126c[class*="replied"] {
+  border-left-color: var(--pink-glow) !important;
+}
+
+.panels_c48ade {
+  border-top: 1px solid var(--border-color);
+}
+
+.tabBar__739f0 .tab_bc1745.selected_bc1745 {
+  border-bottom-color: var(--pink-glow) !important;
+  color: var(--pink-glow) !important;
+}
+
+.tabBar__739f0 .tab_bc1745:hover {
+  color: var(--pink-soft) !important;
+}
+
+.input__372db:focus,
+.input__372db:hover {
+  border-color: var(--pink-glow) !important;
+}
+
+.checkbox__66f13.checked__66f13 {
+  background-color: var(--pink-glow) !important;
+}
+
+.radioGroup__57e3b .radioItem__57e3b.checked__57e3b {
+  border-color: var(--pink-glow) !important;
+}
+
+.privateChannels__374d5 .channel_cda6dd.selected__5d473 {
+  background: var(--bg-hover) !important;
+  border-left: 3px solid var(--pink-glow) !important;
+}
+
+.friendsTable__9d2b9 .friendsRow__9d2b9:hover {
+  background: var(--bg-hover) !important;
+}
+
+.container__06509 .header__06509 {
+  background: var(--bg-secondary) !important;
+}
+
+.container__06509 .input__06509 {
+  background: var(--bg-input) !important;
+}
+
+[class*="containerDefault"] [class*="name"],
+[class*="containerDefault"] [class*="overflow"],
+[class*="containerDefault"] span {
+  color: var(--pink-soft) !important;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Category caret icon */
+[class*="containerDefault"] svg {
+  color: var(--pink-glow) !important;
+}
+
+/* "Offline — 12", "Online — X", etc */
+[class*="membersGroup"],
+[class*="membersGroup"] span {
+  color: #b89aa8 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[class*="sidebar"] [class*="header"]::before,
+[class*="sidebar"] [class*="header"]::after,
+[class*="container"] [class*="header"]::before,
+[class*="container"] [class*="header"]::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* kill ClearVision gradient headers */
+[class*="header"],
+[class*="sidebar"] header {
+  background: var(--bg-secondary) !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.icon__2ea32 {
+  color: #b89aa8 !important;
+} */
