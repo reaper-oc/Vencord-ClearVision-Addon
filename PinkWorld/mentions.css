@@ -1,0 +1,26 @@
+/* message mention highlight */
+.mentioned__5126c {
+  background: rgba(255, 158, 203, 0.18) !important;
+  border-left: 3px solid #ff9ecb !important;
+}
+
+.mentioned__5126c:hover {
+  background: rgba(255, 182, 217, 0.25) !important;
+}
+
+/* @mentions */
+.wrapper_f61d60 {
+  background: rgba(255, 158, 203, 0.15) !important;
+  color: #3a2a30 !important;
+  border-radius: 8px;
+}
+
+.wrapper_f61d60:hover {
+  background: rgba(255, 158, 203, 0.25) !important;
+}
+
+/* less blinding ping badge */
+.numberBadge__2b1f5 {
+  background: #ff9ecb !important;
+  color: #3a2a30 !important;
+}
