@@ -2,33 +2,5 @@
 @import url("./ui.css");
 @import url("./mentions.css");
 @import url("./extras.css");
-/* oh shittings */
 
-.appMount_fae9dd {
-  background: linear-gradient(135deg, #fff0f6, #ffffff) !important;
-}
-
-/* chat area */
-.chatContent_f75fb0 {
-  background: rgba(255, 227, 238, 0.35) !important;
-}
-
-/* channel list full panel */
-.sidebar_c48ade {
-  background: rgba(255, 227, 238, 0.55) !important;
-}
-
-/* member list full panel */
-.membersWrap_cbd271 {
-  background: rgba(255, 227, 238, 0.45) !important;
-}
-
-/* top bar */
-.title_f75fb0 {
-  background: rgba(255, 227, 238, 0.6) !important;
-}
-
-/* message area spacing fix */
-.scrollerContent__36d07 {
-  background: transparent !important;
-}
+/* add more css if you are hungry */
